@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="app/lib/bootstrap/js/jquery-1.9.1.min.js"></script>
+    <link href="app/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="app/lib/bootstrap/css/bootstrap-theme.css"rel="stylesheet">
+    <script type="text/javascript" src="app/lib/bootstrap/js/bootstrap.js"></script>   
+	<script src="app/lib/angular/angular.js"></script>
+	<script src="app/lib/angular/angular-resource.js"></script>
+	<script src="app/lib/angular/angular-route.js"></script>
+	<script src="app/lib/angular/angular-local-storage.js"></script>
+	<script src="app/lib/angular/angular-sanitize.js" ></script>
+	<script src="app/lib/angular/angular-ui-router.js" ></script>
+	<script src="app/lib/angular/angular-cookies.js" ></script>
+
+
+</head>
+<body ng-app="digestoPosadas">
+<div class="container-fluid">
+<div ng-controller='homeController'>
+	<div ui-view="admin"> </div>
+</div>
+
+
+	<script src=app/modules/app.js></script>   
+	<script src=app/controllers/controllers.js></script>  
+
+</body>   
+
+</html>

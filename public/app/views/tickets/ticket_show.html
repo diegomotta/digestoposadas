@@ -1,0 +1,26 @@
+	<div class="container" ng-controller="TicketController">
+		<div class="panel panel-primary">
+			<div class="panel-heading">Estado del reclamo</div>
+				<div class="panel-body">
+					<div class="form-group">
+					 		<label id="sizing-addon1">Nombre y Apellido</label>
+							 <input name="ticketname" type="text" class="form-control"  value="{{consulta.name}}" ng-minlength="1" ng-maxlength="100" disabled>		
+					</div>
+
+					<div class="form-group">
+						<label id="sizing-addon1">Desripción</label>
+						<textarea name="description"  value="{{consulta.description}}" class="form-control" style="height: 180px;" disabled>
+						</textarea>
+					</div>
+					<div class="form-group">
+						<label id="sizing-addon1">Estado</label>
+						<input type="text" class="form-control"  value="{{consulta.state}}"  disabled>
+					</div>
+					<div class="form-group" ng-show="consulta.response">
+						<label id="sizing-addon1">Respuesta</label>
+						<input type="text" class="form-control"  value="{{consulta.response}}"  disabled>
+					</div>
+
+				</div>
+			</div>
+		</div>

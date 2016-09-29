@@ -1,0 +1,36 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="home">Consultas/Reclamos</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right" controller="UserprofileCtrl">
+      <li ><a data-toggle="modal" data-target="#consulta">Consultar ticket</a></li>
+      <li ><a ui-sref="ticket_new">Generar ticket</a></li>
+       <!-- <li ng-show="user.id"><a><span class="glyphicon glyphicon-user"></span>{{user.name}}</a></li>-->
+       <!-- <li ng-show="user.id"><a href="" ng-click='signOut()'>Salir</a></li>-->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>	
+
+
+<div id="consulta" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
+          <h4 class="modal-title" id="myModalLabel">Consultar estado del ticket</h4>
+        </div>
+        <div class="modal-body">
+          <h4 align="center">Ingrese N° de seguimiento:</h4>
+          <input type="text" name="number" ng-model="ticketnumber" value="{{ticketnumber}}">      
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+</div>

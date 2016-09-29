@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="/">
+	<title></title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="app/lib/bootstrap/js/jquery-1.9.1.min.js"></script>
+    <link href="app/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="app/lib/bootstrap/css/bootstrap-theme.css"rel="stylesheet">
+    <script type="text/javascript" src="app/lib/bootstrap/js/bootstrap.js"></script>   
+	<script src="app/lib/angular/angular.js"></script>
+	<script src="app/lib/angular/angular-resource.js"></script>
+	<script src="app/lib/angular/angular-route.js"></script>
+	<script src="app/lib/angular/angular-local-storage.js"></script>
+	<script src="app/lib/angular/angular-sanitize.js" ></script>
+	<script src="app/lib/angular/angular-ui-router.js" ></script>
+	<script src="app/lib/angular/angular-cookies.js" ></script>
+	<script src="app/lib/angular/angular-cookie.js" ></script>
+	<script src="app/lib/angular/ng-token-auth.js"></script>
+	<script src="app/lib/angular/angular-messages.js"></script>
+	<link href="app/lib/datepicker/css/datepicker.css" rel="stylesheet">
+	<script src="app/lib/datepicker/js/bootstrap-datepicker.js"></script>
+ 
+
+</head>
+<body ng-app="digestoPosadas">
+<!--<div class="container-fluid">-->
+<div >
+	<div ui-view="menu"> </div>
+	<div class="container-fluid">
+		<div ng-view=""></div>
+	 <!--<div ui-view="home" style="margin-top: 55px;"> </div>-->
+	    <div ui-view="home"></div>
+	</div>
+</div>
+	<script src="app/modules/app.js"></script>
+	<script src="app/controllers/branchController.js"></script>    
+    <script src="app/controllers/ordinanceController.js"></script>   
+    <script src="app/controllers/user_sessions.js"></script> 
+    <script src="app/controllers/user_registrations.js"></script> 
+    <script src="app/controllers/ticketController.js"></script> 
+	<script src="app/services/factory.js"></script>   
+</body>   
+
+
+</html>

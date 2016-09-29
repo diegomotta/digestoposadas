@@ -1,0 +1,127 @@
+<style type="text/css">
+  .addon {
+    min-width:240px;
+    text-align:left;
+}></style>
+<div ng-controller="ordinanceController">
+  <div class = "panel panel-info">
+     <div class = "panel-heading">
+        <h3 class = "panel-title">
+           Ficha de la Ordenanza
+        </h3>
+     </div>
+     
+    <div class="panel-body">
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Principal
+            </h3>
+         </div>
+        <div class="panel-body">
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>{{branchName}}</b></span>
+              <input disabled="" type="text" disabled="" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.title" value="{{ordinance.title}}">
+          </div>
+
+  <!--          <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Descripción</span>
+              <input disabled="" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.description" value="ordinance.description">
+          </div> -->
+        </div>
+      </div>
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Datos de la Ordenaza
+            </h3>
+         </div>
+        <div class="panel-body">
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Tipo de ordenanza</b></span>
+              <select disabled="" class="form-control"  ng-model="ordinance.ordinance_type_ordinance" ng-options="type_ordinance as type_ordinance.name for type_ordinance in type_ordinances track by ordinance.ordinance_type_ordinance">
+                 <option value="" selected="selected">Seleccione</option>
+              </select>
+          </div>
+
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Número</b></span>
+              <input disabled="" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.number" value="{{ordinance.number}}">
+          </div>
+
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Número anterior</b></span>
+              <input disabled="" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.previous_number" value="{{ordinance.previous_number }}">
+          </div>
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Fecha de sanción</b></span>
+
+              <input disabled=""  class="form-control"aria-describedby="sizing-addon1" ng-model="ordinance.date_sanction"  type="date"  value="{{ordinance.date_sanction  | date : 'yyyy-MM-dd'}}">
+          </div>    
+        </div>
+      </div>
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Datos de publicación
+            </h3>
+         </div>
+        <div class="panel-body">
+            <div class="input-group input-group-lg">
+             <span class="input-group-addon addon" id="sizing-addon1"><b>Tipo de boletín</b></span>
+              <select disabled="" class="form-control" ng-model= "ordinance_type_bulletin" ng-model="type_bulletin" ng-options="type_bulletin.id as type_bulletin.name for type_bulletin in type_bulletins track by type_bulletin.id ">
+                 <option value="" selected="selected">Seleccione</option>
+              </select>
+              </div>
+
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Número de boletín</b></span>
+              <input disabled="" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.number_bulletin" value="{{ordinance.number_bulletin}}" >
+          </div>   
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Fecha de publicación </b></span>
+              <input disabled=""  class="form-control"aria-describedby="sizing-addon1" ng-model="ordinance.date_publication_bulletin"  type="date"  value="{{ordinance.date_publication_bulletin  | date : 'yyyy-MM-dd'}}"  >
+          </div>   
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Pagina</b> </span>
+              <input disabled="" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.page" value="{{ordinance.page}}" >
+          </div>  
+
+        </div>
+      </div>
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Datos de promulgación
+            </h3>
+      
+         </div>
+        <div class="panel-body">
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Tipo de promulgación </b></span>
+              <select disabled="" class="form-control"  ng-model="ordinance.ordinance_type_promulgation" ng-model="ordinance_type_promulgation_dic" ng-options="type_promulgation as type_promulgation.name for type_promulgation in type_promulgations track by ordinance.ordinance_type_promulgation">
+                <option value="" selected="selected">Seleccione</option>
+              </select>
+          </div>    
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Decreto promulgatorio</b> </span>
+              <input disabled="" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.decree_promulgating" value="{{ordinance.decree_promulgating}}" >
+          </div>   
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Fecha de promulgación</b> </span>
+              <input disabled=""  class="form-control"aria-describedby="sizing-addon1" ng-model="ordinance.date_promulgation"  type="date"  value="{{ordinance.date_promulgation  | date : 'yyyy-MM-dd'}}"  >            
+          </div>      
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon addon" id="sizing-addon1"><b>Tema general</b> </span>
+              <input disabled="" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.general_theme" value="{{ordinance.general_theme}}" >
+          </div>     
+        </div>
+      </div>
+
+
+      </br>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<style type="text/css">
+	.input-group-addon {
+    min-width:100px;
+    text-align:left;
+}
+</style>
+<!-- 
+<div class="row">
+	<div class="col-md-4"> -->
+		<div class="row">
+			<div class = "panel panel-info">
+			   <div class = "panel-heading">
+			      <h3 class = "panel-title">
+			         Buscador de normas general
+			      </h3>
+			   </div>
+			   
+			   <div class = "panel-body">
+					<div class="input-group input-group-lg">
+					    <span class="input-group-addon" id="sizing-addon1">Ramas</span>
+			            <select class="form-control"  ng-model="BranchList" ng-options="branch as branch.name for branch in branches | limitTo:17">
+			               <option value="" selected="selected">Seleccione</option>
+			            </select>
+					</div>
+					<div class="input-group input-group-lg">
+					    <span  class="input-group-addon" id="number">Número</span>
+					    <input type="text" class="form-control"  ng-model="searchNumber" aria-describedby="sizing-addon1">
+					</div>
+
+					<div class="input-group input-group-lg">
+					    <span class="input-group-addon" id="age">Año    </span>
+					    <input type="text" class="form-control"  ng-model="searchYear" aria-describedby="sizing-addon1">
+					</div>
+					<div class="input-group input-group-lg">
+					    <span class="input-group-addon" id="words">Palabra</span>
+					    <input type="text" class="form-control"  ng-model="searchWord" aria-describedby="sizing-addon1">
+					</div>   
+		 			<br>
+			         <button ng-click="searchOrdinance(BranchList.id,searchNumber ,searchYear,searchWord)" class="btn btn-info center-block">Buscar</button>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class = "panel panel-info">
+			   <div class = "panel-heading">
+			      <h3 class = "panel-title">
+			         Normas no consolidadas
+			      </h3>
+			   </div>
+			
+				<div class = "panel-body">
+				   <div class="center-block">
+			   			 <button ng-click="searchnoconsolidatedstandards()" class="btn btn-info center-block"><p>Listado de normas vigentes</p><p>no consolidades</p></button>
+				   </div>
+				</div>
+			</div>	
+		</div>
+		<div class="row">
+			<div class = "panel panel-info">
+			   <div class = "panel-heading">
+			      <h3 class = "panel-title">
+			         Normas refundidas
+			      </h3>
+			   </div>
+				<div class = "panel-body">
+					<div class="input-group input-group-lg">
+					    <span class="input-group-addon" >Número</span>
+					    <input type="text" class="form-control" ng-model="numberrmefunded" aria-describedby="sizing-addon1">
+					</div>   
+					<br>
+					<button  class="btn btn-info center-block " ng-click="searchOrdinancerulerefunded(numberrmefunded)">Buscar</button>  
+		   		</div>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="col-md-8">
+	<div ui-view="showuniqueordinance"></div>
+		
+	</div>
+</div> -->

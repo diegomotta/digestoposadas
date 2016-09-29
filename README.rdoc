@@ -1,0 +1,3 @@
+Sistema de Gestión de Resoluciones y Leyes, permitiendo hacer consultas de manera publica por cualquier usuario sin necesidad de un acceso o logueo.
+Front-End: AngularJS 1.5
+Back-End: Ruby on Rails 4

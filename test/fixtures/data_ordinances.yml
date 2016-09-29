@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  type_ordinance: MyString
+  branch: MyString
+  number: MyString
+  previous_name: 1
+  date_sanction: 2016-05-04
+  type_bulletin: MyString
+  number_bulletin: 1
+  date_publication_bulletin: 2016-05-04
+  page: 1
+  type_promulgation: MyString
+  decree_promulgating: MyString
+  date_promulgation: 2016-05-04
+  general_theme: MyString
+
+two:
+  title: MyString
+  description: MyString
+  type_ordinance: MyString
+  branch: MyString
+  number: MyString
+  previous_name: 1
+  date_sanction: 2016-05-04
+  type_bulletin: MyString
+  number_bulletin: 1
+  date_publication_bulletin: 2016-05-04
+  page: 1
+  type_promulgation: MyString
+  decree_promulgating: MyString
+  date_promulgation: 2016-05-04
+  general_theme: MyString

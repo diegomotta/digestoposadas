@@ -1,0 +1,163 @@
+<style type="text/css">
+  .input-group-addon {
+    min-width:220px;
+    text-align:left;
+}></style>
+<div ng-controller="ordinanceController">
+<form name="formulario">
+  <div class = "panel panel-info">
+     <div class = "panel-heading">
+        <h3 class = "panel-title">
+           Ficha de la Ordenanza
+        </h3>
+     </div>
+     
+    <div class="panel-body">
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Principal
+            </h3>
+         </div>
+        <div class="panel-body">
+           <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">Titulo</span>
+            <span class="input-group-addon" id="sizing-addon1">{{branch.name}}</span>
+              <input name="numberOrdinance" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.title" value="{{ordinance.title}}" ng-minlength="1" ng-maxlength="10" required="">
+        </div>
+        <div ng-messages="formulario.numberOrdinance.$error" ng-if="formulario.numberOrdinance.$touched">
+          <div ng-messages-include="app/exceptions/exception_message_branch_new.html"> </div>
+        </div>
+        </div>
+      </div>
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Datos de la Ordenaza
+            </h3>
+         </div>
+        <div class="panel-body">
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Tipo de ordenanza</span>
+              <select name="type_ordinance"class="form-control"  ng-model="ordinance.type_ordinance " ng-options="type_ordinance.id as type_ordinance.name for type_ordinance in type_ordinances track by type_ordinance.id" required="">
+                 <option value="" selected="selected">Seleccione</option>
+              </select>
+          </div>
+          <div ng-messages="formulario.type_ordinance.$error" ng-if="formulario.type_ordinance.$touched">
+            <p class="alert alert-danger" role="alert" ng-message="required">Debe seleccionar este campo</p>
+          </div>
+
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Número</span>
+              <input name="number" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.number" value="{{ordinance.number}}"ng-minlength="1" ng-maxlength="10" required="">
+            </div>
+            <div ng-messages="formulario.number.$error" ng-if="formulario.number.$touched">
+              <div ng-messages-include="app/exceptions/exception_message_branch_new.html"> </div>
+            </div>
+
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Número anterior</span>
+              <input name="previous_number"type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.previous_number" value="{{ordinance.previous_number }}"ng-minlength="1" ng-maxlength="10" required="">
+            </div>
+            <div ng-messages="formulario.previous_number.$error" ng-if="formulario.previous_number.$touched">
+              <div ng-messages-include="app/exceptions/exception_message_branch_new.html"> </div>
+            </div>
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Fecha de sanción</span>
+
+              <input name="date_sanction" class="form-control"aria-describedby="sizing-addon1" ng-model="ordinance.date_sanction"  type="date"  value="{{ordinance.date_sanction  | date : 'yyyy-MM-dd'}}" required="">
+          </div>    
+          <div ng-messages="formulario.date_sanction.$error" ng-if="formulario.date_sanction.$touched">
+              <p class="alert alert-danger" role="alert" ng-message="required">Debe ingresar la fecha de este campo</p>
+          </div> 
+        </div>
+      </div>
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Datos de publicación
+            </h3>
+         </div>
+        <div class="panel-body">
+            <div class="input-group input-group-lg">
+             <span class="input-group-addon" id="sizing-addon1">Tipo de boletín</span>
+              <select name="type_bulletin" class="form-control"  ng-model="ordinance.type_bulletin" ng-options="type_bulletin.id as type_bulletin.name for type_bulletin in type_bulletins track by type_bulletin.id " required="">
+                 <option value="" selected="selected">Seleccione</option>
+              </select>
+            </div>
+            <div ng-messages="formulario.type_bulletin.$error" ng-if="formulario.type_bulletin.$touched">
+              <p class="alert alert-danger" role="alert" ng-message="required">Debe seleccionar este campo</p>
+            </div>
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Número de boletín</span>
+              <input name="number_bulletin" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.number_bulletin" value="{{ordinance.number_bulletin}}" ng-minlength="1" ng-maxlength="10" required="">
+          </div>   
+            <div ng-messages="formulario.number_bulletin.$error" ng-if="formulario.number_bulletin.$touched">
+              <div ng-messages-include="app/exceptions/exception_message_branch_new.html"> </div>
+            </div>          
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Fecha de publicación </span>
+              <input name="date_publication_bulletin" class="form-control"aria-describedby="sizing-addon1" ng-model="ordinance.date_publication_bulletin"  type="date"  value="{{ordinance.date_publication_bulletin  | date : 'yyyy-MM-dd'}}"  required="">
+          </div>   
+            <div ng-messages="formulario.date_publication_bulletin.$error" ng-if="formulario.date_publication_bulletin.$touched">
+              <p class="alert alert-danger" role="alert" ng-message="required">Debe seleccionar este campo</p>
+            </div>
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Pagina </span>
+              <input name="page" type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.page" value="{{ordinance.page}}" ng-minlength="1" ng-maxlength="10"required="">
+          </div>  
+            <div ng-messages="formulario.page.$error" ng-if="formulario.page.$touched">
+              <div ng-messages-include="app/exceptions/exception_message_branch_new.html"> </div>
+            </div>    
+        </div>
+      </div>
+      <div class = "panel panel-info">
+         <div class = "panel-heading">
+            <h3 class = "panel-title">
+               Datos de promulgación
+            </h3>
+      
+         </div>
+        <div class="panel-body">
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Tipo de promulgación </span>
+              <select name="type_promulgation"class="form-control"  ng-model="ordinance.type_promulgation"  ng-options="type_promulgation.id as type_promulgation.name for type_promulgation in type_promulgations track by type_promulgation.id" required="">
+                <option value="" selected="selected">Seleccione</option>
+              </select>
+          </div>  
+            <div ng-messages="formulario.type_promulgation.$error" ng-if="formulario.type_promulgation.$touched">
+              <p class="alert alert-danger" role="alert" ng-message="required">Debe seleccionar este campo</p>
+            </div> 
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Decreto promulgatorio </span>
+              <input name="decree_promulgating"type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.decree_promulgating" value="{{ordinance.decree_promulgating}}" ng-minlength="1" ng-maxlength="10" required="" >
+          </div>   
+            <div ng-messages="formulario.decree_promulgating.$error" ng-if="formulario.decree_promulgating.$touched">
+              <div ng-messages-include="app/exceptions/exception_message_branch_new.html"> </div>
+            </div>              
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Fecha de promulgación </span>
+              <input name="date_promulgation" class="form-control"aria-describedby="sizing-addon1" ng-model="ordinance.date_promulgation"  type="date"  value="{{ordinance.date_promulgation  | date : 'yyyy-MM-dd'}}"  required="">            
+          </div> 
+            <div ng-messages="formulario.date_promulgation.$error" ng-if="formulario.date_promulgation.$touched">
+              <p class="alert alert-danger" role="alert" ng-message="required">Debe ingresa la fecha en este campo</p>
+            </div>      
+           <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="sizing-addon1">Tema general </span>
+              <input name="general_theme"type="text" class="form-control" aria-describedby="sizing-addon1" ng-model="ordinance.general_theme" value="{{ordinance.general_theme}}" ng-minlength="1" ng-maxlength="190" required="">
+          </div> 
+            <div ng-messages="formulario.general_theme.$error" ng-if="formulario.general_theme.$touched">
+              <div ng-messages-include="app/exceptions/exception_message_branch_new.html"> </div>
+            </div>                
+        </div>
+      </div>
+
+
+      </br>
+        <button ng-disabled='!formulario.$valid'  type="button" class="btn btn-success" ng-click="updateOrdinance(ordinance.id,ordinance.title,ordinance.description,type_ordinanceList.name,ordinance.branch, ordinance.number,ordinance.previous_number, ordinance.date_sanction, type_bulletinList.name, ordinance.number_bulletin, ordinance.date_publication_bulletin, ordinance.page, type_promulgationList.name, ordinance.decree_promulgating, ordinance.date_promulgation, ordinance.general_theme)"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>     
+        <button type="button" class="btn btn-danger" ng-click='cancelOrdinance(branch_id)'><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></button> 
+    </div>
+
+  </div>
+  </form>
+</div>
